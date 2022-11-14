@@ -9,7 +9,6 @@ int main()
     scanf("%i",&n);
     char *st1=((char*)malloc(n));
     scanf("%ms",st1);
-    //fflush(stdin);
     printf("Enter the number of symbols and string:");
     scanf("%i",&n);
     char *st2=((char*)malloc(n));
