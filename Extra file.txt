@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    printf("Enter the number of symbols and string:");
+    int n;
+    scanf("%i",&n);
+    char *st1=((char*)malloc(n));
+    scanf("%ms",st1);
+    //fflush(stdin);
+    printf("Enter the number of symbols and string:");
+    scanf("%i",&n);
+    char *st2=((char*)malloc(n));
+    scanf("%s",st2);
+
+    char *st3=((char*)malloc(n));;
+    strcpy(st3,st1);;
+
+    //Осуществить конкатенацию (сложение) двух строк.
+    strcat(st1,st2);
+    printf("%s\n",st1);
+
+    //Осуществить сравнение двух строк.
+    if(strcmp(st1,st2)==0)
+    {
+        printf("YES\n");
+    }
+    else
+    {
+        printf("NO\n");
+    }
+
+    //Осуществить копирование одной строки в другую строку.
+    strcpy(st1,st2);
+    printf("%s\n",st1);
+
+    //Осуществить поиск в одной строке любого из множества символов, входящих во вторую строку.
+    char *i=strpbrk(st3,st2);
+    if(i==NULL)
+    {
+        printf ("No equal Elements\n");
+    }
+    else
+    {
+        printf("Element on pos:%d\n",i-st3);
+    }
+
+
+    for(int j=0;j<i-st3;j++)
+    {
+        printf("%c",st3[j]);
+    }
+
+    return 0;
+}
