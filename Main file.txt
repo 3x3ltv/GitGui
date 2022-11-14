@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+enum paints
+{
+    masl,
+    waterem,
+    silicat,
+    aqaril,
+    emal,
+    silic
+};
+
+struct line {
+    int x;
+    int y;
+    int x2;
+    int y2;
+};
+
+union player
+{
+    struct {
+        int playing:1;
+        int recording:1;
+        int pause:1;
+    };
+    int value;
+}mp3player;
+
+
+int main()
+{
+    enum paints type;
+    type = emal;
+    printf("%d\n",type);
+
+    struct line first;
+    first.x=0;
+    first.y=0;
+    first.x2=4;
+    first.y2=4;
+    int s;
+    s = ((first.x2-first.x)*(first.y2-first.y));
+    printf("%d\n",s);
+
+    printf("Enter the value:");
+    scanf("%x",&mp3player.value);
+    if(mp3player.playing)
+    {
+        printf("MP3Player is playing\n");
+    }
+    else
+    {
+         printf("MP3Player is not playing\n");
+    }
+    if(mp3player.pause)
+    {
+        printf("MP3Player is paused\n");
+    }
+    else
+    {
+         printf("MP3Player is not paused\n");
+    }
+    if(mp3player.recording)
+    {
+        printf("MP3Player is recording\n");
+    }
+    else
+    {
+         printf("MP3Player is not recording\n");
+    }
+
+    return 0;
+}
